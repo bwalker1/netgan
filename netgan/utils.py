@@ -4,7 +4,7 @@ import numpy as np
 from scipy.sparse.csgraph import connected_components, minimum_spanning_tree
 import warnings
 from matplotlib import pyplot as plt
-import igraph
+#import igraph
 import powerlaw
 from numba import jit
 

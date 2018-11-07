@@ -1,11 +1,11 @@
 """
 Implementation of the method proposed in the paper:
 'Adversarial Attacks on Classification Models for Graphs'
-by Aleksandar Bojchevski, Oleksandr Shchur, Daniel Zügner, Stephan Günnemann
+by Aleksandar Bojchevski, Oleksandr Shchur, Daniel Zugner, Stephan Gunnemann
 Published at ICML 2018 in Stockholm, Sweden.
 
 Copyright (C) 2018
-Daniel Zügner
+Daniel Zugner
 Technical University of Munich
 """
 
@@ -257,7 +257,7 @@ class NetGAN:
                 scope.reuse_variables()
 
             def lstm_cell(lstm_size):
-                return tf.contrib.rnn.BasicLSTMCell(lstm_size, reuse=tf.get_variable_scope().reuse)
+                return tf.nn.rnn_cell.LSTMCell(lstm_size, reuse=tf.get_variable_scope().reuse, name="basic_lstm_cell")
 
             self.stacked_lstm = tf.contrib.rnn.MultiRNNCell([lstm_cell(size) for size in self.G_layers])
 
